@@ -46,10 +46,9 @@ def run_zotero(user_id, api_key):
 
     openai.api_key = os.environ.get('OPENAI_API_KEY')
 
-
-    url = 'https://rcqjywjgxdkzyikgbhks.supabase.co/'
-    key = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJjcWp5d2pneGRrenlpa2diaGtzIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY4MjIxNjA3NCwiZXhwIjoxOTk3NzkyMDc0fQ.SZDPrHs9G7RiRjNfLrwgiHUvqA9LAaCpmqP7BWOS7IQ'
-
+    url = os.environ.get('url')
+    key = os.environ.get('key')
+    
     zot = zotero.Zotero(YOUR_USER_ID, 'user', YOUR_API_KEY)
 
 
