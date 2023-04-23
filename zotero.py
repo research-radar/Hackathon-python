@@ -44,7 +44,7 @@ def run_zotero(user_id, api_key):
 
 
 
-    openai.api_key = "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"
+    openai.api_key = os.environ.get('OPENAI_API_KEY')
 
 
     url = 'https://rcqjywjgxdkzyikgbhks.supabase.co/'
