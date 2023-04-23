@@ -13,7 +13,11 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize, sent_tokenize
 import openai
 import tempfile
+from dotenv import load_dotenv
+from pathlib import Path
 
+env_path = Path('.') / '.env.local'
+load_dotenv(dotenv_path=env_path)
 
 
 def validate_credentials(user_id, api_key):
@@ -44,10 +48,11 @@ def run_zotero(user_id, api_key):
 
 
 
-    openai.api_key = os.environ.get('OPENAI_API_KEY')
+    openai.api_key = os.getenv('OPENAI_API_KEY')
+    print("hello sir")
 
-    url = os.environ.get('url')
-    key = os.environ.get('key')
+    url = os.getenv('SUPABASE_URL')
+    key = os.getenv('SUPABASE_KEY')
     
     zot = zotero.Zotero(YOUR_USER_ID, 'user', YOUR_API_KEY)
 
